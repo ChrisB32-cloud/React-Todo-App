@@ -1,11 +1,16 @@
-.deleteBtn {
+.upDateBtn {
   vertical-align: middle;
   background: transparent;
   box-shadow: 0px 0px 0px transparent;
   border: 0px solid transparent;
   text-shadow: 0px 0px 0px transparent;
+
   /* font-size: medium; */
   /* font-weight: bolder; */
+}
+
+.editInput {
+  animation: 1s box-shadowing ease-out 1;
 }
 
 .edDeBtnContainer {
@@ -18,6 +23,15 @@
 }
 
 input {
-  /* background-color: yellow; */
+  background-color: beige;
   border-radius: 5px;
+}
+
+@keyframes box-shadowing {
+  0% {
+    box-shadow: 0px 0px 31px -1px rgb(27, 247, 174);
+  }
+  100% {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  }
 }

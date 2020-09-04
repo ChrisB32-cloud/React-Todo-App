@@ -69,12 +69,13 @@ class Todo extends Component {
             id="name"
             name="name"
             type="text"
+            className="editInput"
             value={this.state.name}
             placeholder={`${this.props.params}`}
             onChange={this.handleChange}
           />
           {/* <button onClick={this.handleToggle}>Save</button> */}
-          <button className="deleteBtn" onClick={this.handleToggle}>
+          <button className="upDateBtn" onClick={this.handleToggle}>
             <AddIcon style={{ fontSize: 'large', font: 'bold' }} />
           </button>
         </form>

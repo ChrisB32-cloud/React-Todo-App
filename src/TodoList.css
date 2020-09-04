@@ -9,6 +9,7 @@ ul {
   margin-top: 5px;
   /* padding-top: 5px; */
   border-radius: 5px;
+  animation: 1s box-shadowing ease-out 1;
 }
 
 .TodoListContainer {
@@ -20,4 +21,14 @@ ul {
   padding-top: 10px;
   padding-bottom: 30px;
   max-width: 300px;
+  animation: 3s box-shadowing ease-out 1;
+}
+
+@keyframes box-shadowing {
+  0% {
+    box-shadow: 0px 0px 31px -1px rgba(27, 145, 247, 1);
+  }
+  100% {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  }
 }
