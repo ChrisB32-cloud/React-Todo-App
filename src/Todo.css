@@ -1,0 +1,23 @@
+.deleteBtn {
+  vertical-align: middle;
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+  /* font-size: medium; */
+  /* font-weight: bolder; */
+}
+
+.edDeBtnContainer {
+  display: inline;
+}
+
+.editDeleteBtn {
+  display: inline;
+  vertical-align: middle;
+}
+
+input {
+  /* background-color: yellow; */
+  border-radius: 5px;
+}
