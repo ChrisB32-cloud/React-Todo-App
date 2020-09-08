@@ -3,7 +3,6 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import SaveIcon from '@material-ui/icons/Save';
 import AddIcon from '@material-ui/icons/Add';
-// import PlusIcon from '@material-ui/icons/Plus';
 // import { mdiPencil } from '@mdi/js';
 import EditTodoForm from './EditTodoForm';
 import './Todo.css';
@@ -14,7 +13,8 @@ class Todo extends Component {
 
     this.state = {
       isEditing: false,
-      name: '',
+      name: this.props.params,
+      id: ''
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -27,6 +27,13 @@ class Todo extends Component {
 
   handleChange(e) {
     //
+    // console.log(e.target.value);
+    // if (e.target.value === '') {
+    //   this.setState({
+    //     name: this.props.params,
+    //     id: this.props.id,
+    //   });
+    // }
     this.setState({
       [e.target.name]: e.target.value,
       id: this.props.id,
@@ -39,13 +46,13 @@ class Todo extends Component {
     // });
     // this.setState({ isEditing: false });
   }
-
+  // Note: Try passing the id as well in editFunc
   handleSubmit(e) {
     e.preventDefault();
     this.props.editFunc(this.state);
     this.setState({
       isEditing: false,
-      name: '',
+      name: this.state.name,
     });
   }
 
@@ -70,9 +77,11 @@ class Todo extends Component {
             name="name"
             type="text"
             className="editInput"
-            value={this.state.name}
-            placeholder={`${this.props.params}`}
+            // defaultValue={this.state.name}
+            placeholder={this.props.params}
             onChange={this.handleChange}
+            value={this.state.name}
+          // onChange={(this.state.name) = this.handleChange(this.state.name)}
           />
           {/* <button onClick={this.handleToggle}>Save</button> */}
           <button className="upDateBtn" onClick={this.handleToggle}>
@@ -83,8 +92,8 @@ class Todo extends Component {
     } else {
       result = (
         <div className="edDeBtnContainer">
-          {/* {this.state.name === '' ? this.props.params : this.state.name} */}
-          {this.props.params}: {/* {this.state.name}:  */}
+
+          {this.props.params}:
           {/* <button onClick={this.handleClick_2}>Edit</button>{' '} */}
           {/* <button onClick={this.handleClick}>x</button> */}
           <div className="editDeleteBtn">

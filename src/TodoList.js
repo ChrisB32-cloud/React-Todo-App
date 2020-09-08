@@ -16,8 +16,8 @@ class TodoList extends Component {
     this.showList = this.showList.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
     this.editItem = this.editItem.bind(this);
-    this.newAddedItem = this.newAddedItem.bind(this);
-    this.setNewItem = this.setNewItem.bind(this);
+    // this.newAddedItem = this.newAddedItem.bind(this);
+    // this.setNewItem = this.setNewItem.bind(this);
   }
 
   addItem(item) {
@@ -28,43 +28,54 @@ class TodoList extends Component {
     }));
   }
 
-  newAddedItem(item) {
-    //
-    // console.log(item);
-  }
+  // newAddedItem(item) {
+  //
+  // console.log(item);
+  // }
 
   editItem(item) {
     //
-    let newName;
+    // console.log(item);
+    // let newName;
     this.state.items.filter((newIt) => {
       if (newIt.id === item.id) {
         newIt.name = item.name;
-        newName = newIt.name;
+        // newName = newIt.name;
       }
     });
 
     this.setState((state) => ({
       items: [...state.items],
     }));
+
+    // this.setState({
+    //   items: this.state.items.filter((newIt) => {
+    //     if (newIt.id === item.id) {
+    //       newIt.name = item.name;
+    //       // newName = newIt.name;
+    //     }
+    //   })
+    // })
+
   }
 
-  setNewItem(item) {
-    //
-    // console.log(item);
-    // this.setState((state) => ({
-    //   items: [...state.items],
-    // }));
-    // let newName;
-    // this.state.items.filter((newIt) => {
-    //   if (newIt.id === item.id) {
-    //     newIt.name = item.name;
-    //     newName = newIt.name;
-    //   }
-    // });
-    // this.setState((state) => ({
-    //   items: [...state.items, item],
-    // }));
-  }
+  // setNewItem(item) {
+  //
+  // console.log(item);
+  // this.setState((state) => ({
+  //   items: [...state.items],
+  // }));
+  // let newName;
+  // this.state.items.filter((newIt) => {
+  //   if (newIt.id === item.id) {
+  //     newIt.name = item.name;
+  //     newName = newIt.name;
+  //   }
+  // });
+  // this.setState((state) => ({
+  //   items: [...state.items, item],
+  // }));
+  // }
 
   deleteItem(id) {
     // console.log(this.state.items);
@@ -81,14 +92,14 @@ class TodoList extends Component {
             {item.name === '' ? (
               ''
             ) : (
-              <Todo
-                params={item.name}
-                id={item.id}
-                func={this.deleteItem}
-                editFunc={this.editItem}
-                setFunc={this.setNewItem}
-              />
-            )}
+                <Todo
+                  params={item.name}
+                  id={item.id}
+                  func={this.deleteItem}
+                  editFunc={this.editItem}
+                // setFunc={this.setNewItem}
+                />
+              )}
           </li>
         ))}
       </ul>
@@ -99,6 +110,7 @@ class TodoList extends Component {
     // console.log(this.state.items);
     return (
       <div className="TodoListContainer">
+        <h1>Todo List</h1>
         {this.showList()}
         <NewTodoForm func={this.addItem} />
       </div>
