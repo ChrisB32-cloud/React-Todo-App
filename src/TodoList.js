@@ -16,8 +16,6 @@ class TodoList extends Component {
     this.showList = this.showList.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
     this.editItem = this.editItem.bind(this);
-    // this.newAddedItem = this.newAddedItem.bind(this);
-    // this.setNewItem = this.setNewItem.bind(this);
   }
 
   addItem(item) {
@@ -28,54 +26,17 @@ class TodoList extends Component {
     }));
   }
 
-  // newAddedItem(item) {
-  //
-  // console.log(item);
-  // }
-
   editItem(item) {
-    //
-    // console.log(item);
-    // let newName;
     this.state.items.filter((newIt) => {
       if (newIt.id === item.id) {
         newIt.name = item.name;
-        // newName = newIt.name;
       }
     });
 
     this.setState((state) => ({
       items: [...state.items],
     }));
-
-    // this.setState({
-    //   items: this.state.items.filter((newIt) => {
-    //     if (newIt.id === item.id) {
-    //       newIt.name = item.name;
-    //       // newName = newIt.name;
-    //     }
-    //   })
-    // })
-
   }
-
-  // setNewItem(item) {
-  //
-  // console.log(item);
-  // this.setState((state) => ({
-  //   items: [...state.items],
-  // }));
-  // let newName;
-  // this.state.items.filter((newIt) => {
-  //   if (newIt.id === item.id) {
-  //     newIt.name = item.name;
-  //     newName = newIt.name;
-  //   }
-  // });
-  // this.setState((state) => ({
-  //   items: [...state.items, item],
-  // }));
-  // }
 
   deleteItem(id) {
     // console.log(this.state.items);

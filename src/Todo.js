@@ -19,10 +19,9 @@ class Todo extends Component {
 
     this.handleClick = this.handleClick.bind(this);
     this.handleClick_2 = this.handleClick_2.bind(this);
-    // this.handleClick_3 = this.handleClick_3.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleToggle = this.handleToggle.bind(this);
+
   }
 
   handleChange(e) {
@@ -40,12 +39,7 @@ class Todo extends Component {
     });
   }
 
-  handleToggle(e) {
-    // this.setState({
-    //   [e.target.name]: e.target.value,
-    // });
-    // this.setState({ isEditing: false });
-  }
+
   // Note: Try passing the id as well in editFunc
   handleSubmit(e) {
     e.preventDefault();
@@ -77,14 +71,13 @@ class Todo extends Component {
             name="name"
             type="text"
             className="editInput"
-            // defaultValue={this.state.name}
             placeholder={this.props.params}
             onChange={this.handleChange}
             value={this.state.name}
-          // onChange={(this.state.name) = this.handleChange(this.state.name)}
+
           />
-          {/* <button onClick={this.handleToggle}>Save</button> */}
-          <button className="upDateBtn" onClick={this.handleToggle}>
+
+          <button className="upDateBtn" >
             <AddIcon style={{ fontSize: 'large', font: 'bold' }} />
           </button>
         </form>
@@ -92,10 +85,7 @@ class Todo extends Component {
     } else {
       result = (
         <div className="edDeBtnContainer">
-
           {this.props.params}:
-          {/* <button onClick={this.handleClick_2}>Edit</button>{' '} */}
-          {/* <button onClick={this.handleClick}>x</button> */}
           <div className="editDeleteBtn">
             <EditIcon onClick={this.handleClick_2} />
             <DeleteIcon onClick={this.handleClick} />
