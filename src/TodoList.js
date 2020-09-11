@@ -71,7 +71,7 @@ class TodoList extends Component {
     // console.log(this.state.items);
     return (
       <div className="TodoListContainer">
-        <h1>Todo List</h1>
+        <h1><u>Todo List</u></h1>
         {this.showList()}
         <NewTodoForm func={this.addItem} />
       </div>
