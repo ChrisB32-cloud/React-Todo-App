@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
-import SaveIcon from '@material-ui/icons/Save';
 import AddIcon from '@material-ui/icons/Add';
 // import { mdiPencil } from '@mdi/js';
 import EditTodoForm from './EditTodoForm';
@@ -85,8 +84,9 @@ class Todo extends Component {
     } else {
       result = (
         <div className="edDeBtnContainer">
-          {this.props.params}:
+          {this.props.params}{' '}
           <div className="editDeleteBtn">
+            {' '}
             <EditIcon onClick={this.handleClick_2} />
             <DeleteIcon onClick={this.handleClick} />
           </div>
