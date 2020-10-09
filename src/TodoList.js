@@ -17,6 +17,7 @@ class TodoList extends Component {
     this.deleteItem = this.deleteItem.bind(this);
     this.editItem = this.editItem.bind(this);
   }
+  //
 
   addItem(item) {
     //
